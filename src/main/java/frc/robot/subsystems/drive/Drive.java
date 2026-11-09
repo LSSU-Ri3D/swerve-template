@@ -19,6 +19,7 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.math.numbers.N1;
 import edu.wpi.first.math.numbers.N3;
+import edu.wpi.first.util.sendable.SendableBuilder;
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 import edu.wpi.first.wpilibj.RobotBase;
@@ -48,6 +49,7 @@ public class Drive extends SubsystemBase {
     poseEstimator =
         new SwerveDrivePoseEstimator(KINEMATICS, getGyroYaw(), getModulePositions(), Pose2d.kZero);
     SmartDashboard.putData("Field", field);
+    SmartDashboard.putData("Swerve", this::initSwerveWidget);
     configurePathPlanner();
   }
 
@@ -208,6 +210,20 @@ public class Drive extends SubsystemBase {
   }
 
   // ---- Internals ----
+
+  // Elastic's SwerveDrive widget wants a Sendable shaped exactly like this: radians, FL FR BL BR
+  private void initSwerveWidget(SendableBuilder builder) {
+    builder.setSmartDashboardType("SwerveDrive");
+    String[] names = {"Front Left", "Front Right", "Back Left", "Back Right"};
+    for (int i = 0; i < modules.length; i++) {
+      SwerveModule module = modules[i];
+      builder.addDoubleProperty(
+          names[i] + " Angle", () -> module.getState().angle.getRadians(), null);
+      builder.addDoubleProperty(
+          names[i] + " Velocity", () -> module.getState().speedMetersPerSecond, null);
+    }
+    builder.addDoubleProperty("Robot Angle", () -> getPose().getRotation().getRadians(), null);
+  }
 
   // Which way is "away from the driver" in the robot's frame. The field origin is always the blue
   // corner, so on red that's flipped 180

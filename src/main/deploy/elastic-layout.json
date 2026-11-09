@@ -1,0 +1,260 @@
+{
+  "version": 1.0,
+  "grid_size": 128,
+  "tabs": [
+    {
+      "name": "Teleoperated",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Field",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1024.0,
+            "height": 512.0,
+            "type": "Field",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.93,
+              "robot_length": 0.93,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": 0.0,
+              "show_robot_outside_widget": true
+            }
+          },
+          {
+            "title": "Swerve",
+            "x": 1024.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 512.0,
+            "type": "SwerveDrive",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Swerve",
+              "show_robot_rotation": true,
+              "rotation_unit": "Radians"
+            }
+          },
+          {
+            "title": "Alerts",
+            "x": 0.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 256.0,
+            "type": "Alerts",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Alerts"
+            }
+          },
+          {
+            "title": "Scheduler",
+            "x": 512.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 256.0,
+            "type": "Scheduler",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Scheduler"
+            }
+          },
+          {
+            "title": "FMS",
+            "x": 1024.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "FMSInfo",
+            "properties": {
+              "period": 0.06,
+              "topic": "/FMSInfo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Autonomous",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Field",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1024.0,
+            "height": 512.0,
+            "type": "Field",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Field",
+              "field_game": "Rebuilt",
+              "robot_width": 0.93,
+              "robot_length": 0.93,
+              "show_other_objects": true,
+              "show_trajectories": true,
+              "field_rotation": 0.0,
+              "show_robot_outside_widget": true
+            }
+          },
+          {
+            "title": "Auto",
+            "x": 1024.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "ComboBox Chooser",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Auto",
+              "sort_options": false
+            }
+          },
+          {
+            "title": "PathPlanner",
+            "x": 1024.0,
+            "y": 128.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Alerts",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/PathPlanner"
+            }
+          },
+          {
+            "title": "Alerts",
+            "x": 0.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 256.0,
+            "type": "Alerts",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Alerts"
+            }
+          },
+          {
+            "title": "Scheduler",
+            "x": 512.0,
+            "y": 512.0,
+            "width": 512.0,
+            "height": 256.0,
+            "type": "Scheduler",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Scheduler"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bring-up",
+      "grid_layout": {
+        "layouts": [],
+        "containers": [
+          {
+            "title": "Swerve",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 512.0,
+            "type": "SwerveDrive",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Swerve",
+              "show_robot_rotation": true,
+              "rotation_unit": "Radians"
+            }
+          },
+          {
+            "title": "CANcoder absolute (rot) FL FR BL BR",
+            "x": 512.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Text Display",
+            "properties": {
+              "period": 0.06,
+              "topic": "Robot/container/drive/getEncoderAbsoluteRotations",
+              "data_type": "double[]",
+              "show_submit_button": false
+            }
+          },
+          {
+            "title": "Raw drive (m) FL FR BL BR",
+            "x": 512.0,
+            "y": 128.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Text Display",
+            "properties": {
+              "period": 0.06,
+              "topic": "Robot/container/drive/getRawDriveMeters",
+              "data_type": "double[]",
+              "show_submit_button": false
+            }
+          },
+          {
+            "title": "Drive current (A) FL FR BL BR",
+            "x": 512.0,
+            "y": 256.0,
+            "width": 512.0,
+            "height": 128.0,
+            "type": "Text Display",
+            "properties": {
+              "period": 0.06,
+              "topic": "Robot/container/drive/getDriveCurrentsAmps",
+              "data_type": "double[]",
+              "show_submit_button": false
+            }
+          },
+          {
+            "title": "Coupling test",
+            "x": 512.0,
+            "y": 384.0,
+            "width": 256.0,
+            "height": 128.0,
+            "type": "Command",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Bring-up/Coupling test",
+              "show_type": false
+            }
+          },
+          {
+            "title": "Alerts",
+            "x": 1024.0,
+            "y": 0.0,
+            "width": 512.0,
+            "height": 384.0,
+            "type": "Alerts",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Alerts"
+            }
+          },
+          {
+            "title": "Scheduler",
+            "x": 1024.0,
+            "y": 384.0,
+            "width": 512.0,
+            "height": 256.0,
+            "type": "Scheduler",
+            "properties": {
+              "period": 0.06,
+              "topic": "/SmartDashboard/Scheduler"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.Autos;
 import frc.robot.subsystems.drive.Drive;
@@ -37,6 +38,7 @@ public class RobotContainer {
     SmartDashboard.putData("Auto", autoChooser);
     // bring-up buttons, click them in Elastic (or some other dashboard I just like elastic)
     SmartDashboard.putData("Bring-up/Coupling test", drive.couplingTest());
+    SmartDashboard.putData("Scheduler", CommandScheduler.getInstance());
 
     configureDefaultCommands();
     configureDriverBindings();
