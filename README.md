@@ -9,7 +9,11 @@ Read [STANDARDS.md](STANDARDS.md) before you write anything, it's short.
 ## Setup
 
 1. Install [WPILib 2026](https://github.com/wpilibsuite/allwpilib/releases) (comes with VS Code).
-2. Clone this repo, open the folder in WPILib VS Code.
+2. Clone this repo and open the folder in WPILib VS Code:
+
+   ```bash
+   git clone https://github.com/LSSU-Ri3D/swerve-template.git
+   ```
 3. `./gradlew build`. The first one downloads everything and takes a few minutes.
 4. Set your team number in `.wpilib/wpilib_preferences.json` to whatever the roboRIO was imaged
    with (it's `0` right now). Deploying over USB works whatever the number is.
