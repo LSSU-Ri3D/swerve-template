@@ -1,7 +1,7 @@
 # LSSU Ri3D swerve template
 
 Our robot code base for BIOCORE: swerve on 4 SDS MK5n (R1), NEO v1.1 drive on SPARK MAX, Kraken X44
-steer, CANcoders, NavX MXP (or a Pigeon 1.0), 30x30 frame. Everything is ready before kickoff, so
+steer, CANcoders, NavX3 on CAN (or a Pigeon 1.0), 30x30 frame. Everything is ready before kickoff, so
 build day is just adding mechanisms.
 
 Read [STANDARDS.md](STANDARDS.md) before you write anything, it's short.
@@ -34,8 +34,12 @@ work in sim.
 
 ## Swapping the gyro
 
-`DriveConstants.GYRO`. `NAVX_MXP` for the NavX in the MXP port, `PIGEON_1` for a Pigeon 1.0 on CAN
-ID 2 (change it in `Ports.PIGEON_1`). That's the only line.
+`DriveConstants.GYRO`. `NAVX3` for the NavX3 on CAN ID 3 (`Ports.NAVX3`, it ships as 0 so set it
+in Studica's NavX3 tool first), `PIGEON_1` for a Pigeon 1.0 on CAN ID 2 (`Ports.PIGEON_1`). That's
+the only line.
+
+An old NavX/NavX2 in the MXP port won't work anymore: it needs the old Studica vendordep, and
+StudicaLib (NavX3) refuses to sit next to it.
 
 ## Hardware notes
 

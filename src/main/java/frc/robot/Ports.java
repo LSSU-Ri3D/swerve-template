@@ -1,6 +1,6 @@
 package frc.robot;
 
-// Every CAN ID and controller port on the robot 
+// Every CAN ID and controller port on the robot
 // IDs are unique across ALL device types (REV and CTRE would let them overlap, we don't), so
 // "23" always means one physical thing. Tens digit is the group:
 //   1-9    power and robot-wide stuff
@@ -15,10 +15,12 @@ public final class Ports {
   public static final int DRIVER_CONTROLLER = 0;
   public static final int OPERATOR_CONTROLLER = 1;
 
-  // WPILib expects a REV PDH on 1. The NavX goes in the MXP port, not CAN, so it doesn't get an
-  // ID, the Pigeon 1.0 only matters if DriveConstants.GYRO is set to it
+  // WPILib expects a REV PDH on 1. Only one of the gyros is ever on the robot (DriveConstants.GYRO
+  // picks), but they each get their own ID anyway. The NavX3 ships as CAN ID 0, so set it to 3 in
+  // Studica's NavX3 tool before it goes on the bus
   public static final int PDH = 1;
   public static final int PIGEON_1 = 2;
+  public static final int NAVX3 = 3;
 
   public static final int FL_DRIVE = 11;
   public static final int FL_STEER = 12;

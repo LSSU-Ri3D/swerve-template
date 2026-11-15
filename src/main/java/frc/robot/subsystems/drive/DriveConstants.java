@@ -13,12 +13,12 @@ public final class DriveConstants {
   private DriveConstants() {}
 
   public enum GyroType {
-    NAVX_MXP,
+    NAVX3,
     PIGEON_1
   }
 
   // Which gyro is on the robot right now. This is the only line to change to swap them
-  public static final GyroType GYRO = GyroType.NAVX_MXP;
+  public static final GyroType GYRO = GyroType.NAVX3;
 
   public record ModuleSpec(
       String name,

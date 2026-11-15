@@ -1,7 +1,7 @@
 # How we write robot code
 
 **The stack:** Java 17, WPILib 2026 command-based, roboRIO. Phoenix 6 for Krakens/CANcoders,
-Phoenix 5 only for the Pigeon 1.0, REVLib for NEOs, Studica for the NavX, PathPlanner for autos,
+Phoenix 5 only for the Pigeon 1.0, REVLib for NEOs, StudicaLib for the NavX3, PathPlanner for autos,
 Epilogue for logging, Elastic for the dashboard. Don't add another vendordep unless you actually
 need it (or just ask me (ada))
 
